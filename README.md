@@ -1,5 +1,6 @@
 # SSL Helper
 
+A small bash utility for checking/managing SSL Certifcates
 
 ## Usage
 * Add an SSL certificate in the following structure:
