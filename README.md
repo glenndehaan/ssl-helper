@@ -3,6 +3,7 @@
 A small bash utility for checking/managing SSL Certifcates
 
 ## Usage
+### View Certificate Details
 * Add an SSL certificate in the following structure:
 ```
 - example.com
@@ -11,10 +12,11 @@ A small bash utility for checking/managing SSL Certifcates
     - example.com/example.com.key (Private Key)
 ```
 
-* Download the src/ssl-helper.sh from GitHub and store it somewhere on your machine.
+* Download the `src/ssl-helper.sh` from GitHub and store it somewhere on your machine.
 * Run the utility as follows `./ssl-helper.sh ./example.com`
+* Select option 1 from the list
 
-## Example Output
+#### Example Output
 ```
 
 -------------------------------------------------------------------------------
@@ -46,6 +48,12 @@ Not Valid After: Mar 5 23:59:59 2021 GMT
 -------------------------------------------------------------------------------
 
 ```
+
+### Create a Private Key/Certificate Request pair
+* Download the `src/ssl-helper.sh` and `ssl-helper.defaults.conf` from GitHub and store it somewhere on your machine.
+* Update the `ssl-helper.defaults.conf` to match your organisation details
+* Run the utility as follows `./ssl-helper.sh example.com`
+* Select option 2 from the list
 
 ## License
 
