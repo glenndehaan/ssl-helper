@@ -178,6 +178,12 @@ create_ssl () {
 
     REAL_FILE_LOCATION="$(pwd)/${FILE_LOCATION}"
 
+    ## Check if the private key already exists (Then don't override this)
+    if [ -f "$REAL_FILE_LOCATION/$FILE_LOCATION.key" ]; then
+        echo -e "${COLOR_RED}[FATAL]${COLOR_RESET} The following file already exists: $REAL_FILE_LOCATION/$FILE_LOCATION.key"
+        exit 3;
+    fi
+
     ## Check if an ssl-helper.defaults.conf is in the directory
     if [ ! -f "$SCRIPT_DIR/ssl-helper.defaults.conf" ]; then
         echo -e "$COLOR_YELLOW[WARNING]$COLOR_RESET Missing defaults: $SCRIPT_DIR/ssl-helper.defaults.conf"
